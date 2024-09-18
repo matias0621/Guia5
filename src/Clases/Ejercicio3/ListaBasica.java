@@ -2,13 +2,16 @@ package Clases.Ejercicio3;
 
 import Interfaces.Reproduccion;
 
-import java.util.ArrayList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 public class ListaBasica implements Reproduccion {
     private String nombre;
     private Queue<Cancion> miLista;
+
+    public ListaBasica(String nombre) {
+        this.nombre = nombre;
+        miLista = new LinkedList<>();
+    }
 
 
     @Override
@@ -44,7 +47,7 @@ public class ListaBasica implements Reproduccion {
             System.out.println("No hay Canciones");
         }
         else {
-                System.out.println(miLista.toString());
+                System.out.println(toString());
         }
     }
 
@@ -57,4 +60,11 @@ public class ListaBasica implements Reproduccion {
         }
     }
 
+    @Override
+    public String toString() {
+        return "ListaBasica{" +
+                "nombre='" + nombre + '\n' +
+                ", miLista=" + miLista +
+                '}';
+    }
 }

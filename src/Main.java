@@ -1,7 +1,6 @@
-import Clases.Ejercicio3.Album;
-import Clases.Ejercicio3.Artista;
-import Clases.Ejercicio3.Cancion;
-import Clases.Ejercicio3.Reproductor;
+import Clases.Ejercicio1.Inventario;
+import Clases.Ejercicio1.Libro;
+import Clases.Ejercicio3.*;
 import Enums.Genero;
 
 import java.util.ArrayList;
@@ -17,6 +16,29 @@ public class Main {
         control = sc.nextInt();
         switch (control) {
             case 1:
+                Libro libro1 = new Libro("Valle de la calma", "Dross", 500, "2019");
+                Libro libro2 = new Libro("Luna de Pluton", "Dross", 800, "2016");
+                Libro libro3 = new Libro("Deadpool mata al universo marvel", "Un chango", 1000, "2012");
+
+                Inventario inventario = new Inventario();
+                inventario.agregarLibro(libro1);
+                inventario.agregarLibro(libro2);
+                inventario.agregarLibro(libro3);
+
+                /*inventario.mostrarInventarioDeLibros();
+
+                inventario.cantidadDeLibrosEnElInventario();
+
+                inventario.buscarLibros(libro3);
+
+                inventario.modificarPrecioDeLibro();
+
+                inventario.calcularPrecioTotal();*/
+
+                inventario.libroMasCaro();
+
+                inventario.libroMasBarato();
+
                 break;
             case 2:
                 break;
@@ -29,6 +51,7 @@ public class Main {
                 Cancion cancion1 = new Cancion("Bohemian Rhapsody", 5.55, Genero.ROCK, album1, null);
                 Cancion cancion2 = new Cancion("Under Pressure", 4.08, Genero.ROCK, album1, artista2);
 
+                /*
                 Reproductor miLista = new Reproductor();
                 miLista.añadirCancion(cancion1);
                 miLista.añadirCancion(cancion2);
@@ -37,6 +60,24 @@ public class Main {
                 miLista.reproducir();
                 miLista.eliminarCancion();
                 miLista.verMiLista();
+
+
+                ListaBasica listaBasica = new ListaBasica("La super lista");
+
+                listaBasica.añadirCancion(cancion1);
+                listaBasica.añadirCancion(cancion2);
+                listaBasica.verMiLista();
+                listaBasica.reproducir();
+                 */
+
+                ListaPremium listaPremium = new ListaPremium("Lista de chetooooooo");
+
+                listaPremium.añadirCancion(cancion1);
+                listaPremium.añadirCancion(cancion2);
+                listaPremium.reproducir();
+                listaPremium.verMiLista();
+
+
                 break;
             default:
                 System.out.println("Ese ejercicio no existe");
